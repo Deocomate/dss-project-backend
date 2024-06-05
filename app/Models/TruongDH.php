@@ -32,6 +32,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|TruongDH whereTruongdhTen($value)
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TruongDH_Nganh> $truongdh_nganh
  * @property-read int|null $truongdh_nganh_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TruongDH_Nganh> $truongDhNganhList
+ * @property-read int|null $truong_dh_nganh_list_count
  * @mixin \Eloquent
  */
 class TruongDH extends Model
@@ -40,7 +42,7 @@ class TruongDH extends Model
 
     protected $table = "truongdh";
 
-    public function truongdh_nganh(): HasMany
+    public function truongDhNganhList(): HasMany
     {
         return $this->hasMany(TruongDH_Nganh::class, 'truongdh_id', 'id');
     }

@@ -92,7 +92,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($truongDh->truongdh_nganh as $truongDhNganh)
+                            @foreach($truongDh->truongDhNganhList as $truongDhNganh)
                                 <tr>
                                     <td>{{$truongDhNganh->nganh->nganh_ten}}</td>
                                     <td style="width: 100px">{{$truongDhNganh->hoc_phi_trung_binh}}</td>

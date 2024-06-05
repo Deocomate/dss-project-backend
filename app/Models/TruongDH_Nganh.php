@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * 
+ *
  *
  * @method static \Illuminate\Database\Eloquent\Builder|TruongDH_Nganh newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TruongDH_Nganh newQuery()
@@ -29,6 +29,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read int|null $truongdh_nganh_khoithi_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\DiemChuan> $diemchuanList
  * @property-read int|null $diemchuan_list_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TruongDH_Nganh_KhoiThi> $truongDhNganhKhoithiList
+ * @property-read int|null $truong_dh_nganh_khoithi_list_count
  * @mixin \Eloquent
  */
 class TruongDH_Nganh extends Model
@@ -47,12 +49,12 @@ class TruongDH_Nganh extends Model
         return $this->belongsTo(Nganh::class, 'nganh_id', 'id');
     }
 
-    public function truongdh_nganh_khoithi(): HasMany
+    public function truongDhNganhKhoithiList(): HasMany
     {
         return $this->hasMany(TruongDH_Nganh_KhoiThi::class, 'truongdh_nganh_id', 'id');
     }
 
-    public function diemchuanList(): HasMany
+    public function diemChuanList(): HasMany
     {
         return $this->hasMany(DiemChuan::class, 'truongdh_nganh_id', 'id');
     }

@@ -64,7 +64,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($truongDhNganh->truongdh_nganh_khoithi as $item)
+                @foreach($truongDhNganh->truongDhNganhKhoithiList as $item)
                     <tr>
                         <th>{{$item->khoithi->khoithi_ten}}</th>
                         <th><a href="{{ route('admin.truongdh.nganh.khoithi.delete',['id'=>$item->id]) }}">Xóa</a></th>
@@ -83,7 +83,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($truongDhNganh->diemchuanList as $diemChuan)
+                @foreach($truongDhNganh->diemChuanList as $diemChuan)
                     <tr>
                         <th>{{$diemChuan->diemchuan_nam}}</th>
                         <th>{{$diemChuan->diemchuan_diem}}</th>

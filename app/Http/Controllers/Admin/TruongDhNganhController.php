@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\DiemChuan;
 use App\Models\KhoiThi;
 use App\Models\TruongDH_Nganh;

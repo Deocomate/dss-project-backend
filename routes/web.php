@@ -1,13 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Admin\NganhController;
+use App\Http\Controllers\Admin\NganhController;
 use App\Http\Controllers\Admin\TruongDhController;
-use App\Http\Controllers\TruongDhNganhController;
+use App\Http\Controllers\Admin\TruongDhNganhController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Fe\HomeController;
+use App\Http\Controllers\Fe\ApiController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, "index"], "")->name("home");
+Route::get('/api/truongdh/list', [ApiController::class, "list"], "")->name("api.truongdh.list");
 
 Route::get("/admin/nganh/create", [NganhController::class, "create"])->name("admin.nganh.create");
 Route::post("/admin/nganh/store", [NganhController::class, "store"])->name("admin.nganh.store");
